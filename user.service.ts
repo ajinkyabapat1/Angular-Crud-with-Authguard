@@ -7,5 +7,9 @@ export class UserService {
 
   constructor( private http:HttpClient) { }
 
-  
+
+  getData(){
+ return this.http.get("assets/userData.json");
+  }
+
 }
