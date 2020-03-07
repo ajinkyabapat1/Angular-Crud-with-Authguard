@@ -19,8 +19,8 @@
 </div>
 <div class="col-md-4">
     <span> Number of Customer </span>
-    <select [(ngModel)]="rowsOnPage">
-      <option *ngFor="let row of rowsOnPageSet" [value]="row">{{ row }}</option>
+    <select [(ngModel)]="rowsOnPage" style="border-radius: 5px; width: 80px;">
+      <option *ngFor="let row of rowsOnPageSet" [value]="row" >{{ row }}</option>
     </select>
 </div>
 <div class="col-md-4">

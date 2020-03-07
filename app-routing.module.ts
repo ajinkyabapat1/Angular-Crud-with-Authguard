@@ -12,10 +12,10 @@ const routes: Routes = [
   { path: '', component: WelcomeComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'register', component: UserRegisterComponent}
+  { path: 'register', component: UserRegisterComponent, canActivate: [AuthGuard] }
 ];
 
-// , canActivate: [AuthGuard] 
+// 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
