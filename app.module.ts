@@ -20,8 +20,8 @@ import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.com
 import { AuthService } from './auth/auth.service';
 //import { TrainingService } from './training/training.service';
 import { UserRegisterComponent } from './user-register/user-register.component';
-
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {HttpClientModule} from '@angular/common/http'
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +44,8 @@ import { UserRegisterComponent } from './user-register/user-register.component';
     AppRoutingModule,
     FlexLayoutModule,
     FormsModule,
+    NgbModule,
+    HttpClientModule,
     ReactiveFormsModule
   ],
   providers: [AuthService],
