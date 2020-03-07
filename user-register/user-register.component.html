@@ -1,10 +1,39 @@
 <div class="container">
-    <div class="card">
-        <div class="card-header">
-         <h3 style="color:navy;text-align:center">Customer Registration Form</h3>
-        </div>
+  <div class="card">
+    <div class="card-header">
+      <h3 style="color:navy;text-align:center">Customer Registration Form</h3>
     </div>
+  </div>
   <div class="reglist">
+      <div class="row">
+          <div class="col-md-4">
+    <input
+      class="form-control"
+      type="text"
+      name="search"
+      [(ngModel)]="searchText"
+      autocomplete="off"
+      placeholder="Search Customer "
+      style="width: 6cm"
+    />
+</div>
+<div class="col-md-4">
+    <span> Number of Customer </span>
+    <select [(ngModel)]="rowsOnPage">
+      <option *ngFor="let row of rowsOnPageSet" [value]="row">{{ row }}</option>
+    </select>
+</div>
+<div class="col-md-4">
+    <pagination-controls
+      id="listing_pagination"
+      maxSize=""
+      directionLinks="true"
+      (pageChange)="page = $event"
+    >
+    </pagination-controls>
+</div>
+</div>
+
     <table class="table table-striped">
       <thead style="color: #336600;">
         <tr>
@@ -20,7 +49,20 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let registration of registrations; let i = index">
+        <tr
+          *ngFor="
+            let registration of registrations
+              | paginate
+                : {
+                    id: 'listing_pagination',
+                    itemsPerPage: rowsOnPage,
+                    currentPage: page,
+                    totalItems: pagelength
+                  }
+              | filter: searchText;
+            let i = index
+          "
+        >
           <th scope="row">{{ i + 1 }}</th>
           <td>{{ registration.firstName }}</td>
           <td>{{ registration.lastName }}</td>

@@ -17,6 +17,9 @@ class Registration {
   styleUrls: ["./user-register.component.css"]
 })
 export class UserRegisterComponent implements OnInit {
+  public rowsOnPageSet = [5, 10, 50, 100, 300];
+  searchText: any;
+  rowsOnPage = 5;
   registrations: any[] = [];
   // It maintains registration Model
   regModel: Registration;
