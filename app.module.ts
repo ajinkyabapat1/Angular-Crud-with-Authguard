@@ -22,6 +22,8 @@ import { AuthService } from './auth/auth.service';
 import { UserRegisterComponent } from './user-register/user-register.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {HttpClientModule} from '@angular/common/http'
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NgxPaginationModule } from 'ngx-pagination';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +48,8 @@ import {HttpClientModule} from '@angular/common/http'
     FormsModule,
     NgbModule,
     HttpClientModule,
+    Ng2SearchPipeModule,
+    NgxPaginationModule,
     ReactiveFormsModule
   ],
   providers: [AuthService],
